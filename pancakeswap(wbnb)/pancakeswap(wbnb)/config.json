@@ -1,0 +1,13 @@
+{
+  "provider" : "",
+  "provider_wss" : "",
+  "address": "",
+  "private_key": "",
+  "new_token_address": "",
+  "new_token_server": "0x3a2D7dB3b917329F3A65b3618f303D7078b8FC30",
+  "trailing_stop": 10,
+  "slippage": 100,
+  "gas_limit": 500000,
+  "gas_price": 5,
+  "amount" : 0.0001
+}

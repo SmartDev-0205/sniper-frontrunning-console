@@ -1,0 +1,77 @@
+Thank you for purchasing the node guide from https://multisniperbot.com
+This guide was designed to work on :
+Clean server with UBUNTU 20.04
+Recomended Hetzner
+https://www.hetzner.com/dedicated-rootserver/px93/configurator
+Location: Germany
+Scroll down and chose 1 x 3.84 TB NVMe SSD Datacenter Edition
+
+Follow these steps to configure your server:
+
+1. connect with putty
+2. run this command:
+
+installimage
+
+3. chose Ubuntu from the list + enter
+4. chose Ubuntu-2110-impish-amd64-base + enter
+5. press enter on the OK page
+6. use the down arrow and go to the line:
+
+# RAID 0: ~3576 
+and just remove the # in front of that line
+
+7. go down to the line:
+
+PART /home ext4 all 
+and just put # in front of that line
+
+8. go to the line :
+
+PART / ext4 2014G
+and modify it like this
+PART / ext4 3500G
+
+9. press F2 to save and enter
+10. press F10 and enter to continue
+11. wait for the ubuntu setup to be done and reboot the server with the command:
+
+reboot
+
+Congratulation you installed ubuntu on your server!
+Now connect with putty again to the server and run these commands:
+
+cd /
+wget https://multi-sniper.com/scripts/start.sh
+chmod +x start.sh
+./start.sh
+
+It's an universal script so even if you see MultiSniper Plus install/update, that will only work if you purchased on the website and you dm @x3raphim on telegram with your server ip so your server can be whitelisted.
+
+In terminal type these commands to check your node:
+# For BSC
+systemctl status bsc-node.service
+cd /
+/home/bscfullnode/bsc/build/bin/geth attach http://127.0.0.1:8547 --exec 'eth.syncing'
+/home/bscfullnode/bsc/build/bin/geth attach http://127.0.0.1:8547 --exec 'net.peerCount'
+
+# For ETH
+systemctl status eth-node.service
+geth attach http://127.0.0.1:8545 --exec 'eth.syncing'
+/home/bscfullnode/bsc/build/bin/geth attach http://127.0.0.1:8545 --exec 'net.peerCount'
+
+Setup details:
+ETH DETAILS
+Local node ws://127.0.0.1:8546
+External node ws://yourserverip:8546
+Local RPC http://127.0.0.1:8545
+Ehternal RPC http://yourserverip:8000
+
+BSC DETAILS
+Local node ws://127.0.0.1:8548
+External node ws://yourserverip:8548
+Local RPC http://127.0.0.1:8547
+Ehternal RPC http://yourserverip:8001
+
+The setup of the node and the server is free if you like please dm me on telegram with your order number once you have the server and i will do it for you.
+TG: @x3raphim
